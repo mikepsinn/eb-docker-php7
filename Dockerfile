@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev libpq-dev git \
     && pecl install apcu-5.1.5 \
     && docker-php-ext-enable apcu
     
+RUN docker-php-ext-install sockets
+    
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     libmemcached-dev \
