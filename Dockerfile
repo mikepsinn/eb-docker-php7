@@ -25,3 +25,8 @@ RUN curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-m
     && docker-php-ext-configure memcached \
     && docker-php-ext-install memcached \
     && rm /tmp/memcached.tar.gz
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- \
+        --install-dir=/usr/local/bin \
+        --filename=composer
